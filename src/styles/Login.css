@@ -1,0 +1,89 @@
+body {
+    background-color: #000;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 60px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    background-color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.login-btn {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #444;
+    color: #aaa;
+    cursor: not-allowed;
+    font-size: 15px;
+}
+
+.login-btn.enabled {
+    background-color: #ff5722;
+    color: black;
+    cursor: pointer;
+}
+
+.signup-prompt {
+    margin-top: 20px;
+    color: #ccc;
+    text-align: center;
+}
+
+.signup-link {
+    color: #ff5722;
+    font-weight: bold;
+    cursor: pointer;
+}
+.error-message {
+    background-color: #ff3b3b;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    flex: 1;
+    padding-right: 40px; /* space for the eye button */
+}
+
+.toggle-password-btn {
+    position: absolute;
+    right: 0.75rem; /* gives a little spacing from the edge */
+    top: 37.5%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    font: inherit;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
