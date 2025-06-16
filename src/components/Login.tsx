@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/authService";
 import "../styles/Login.css";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
     const [usernameOrEmail, setUsernameOrEmail] = useState("");
@@ -11,6 +12,7 @@ const Login = () => {
     const [isButtonEnabled, setIsButtonEnabled] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     useEffect(() => {
         const uuid = localStorage.getItem("uuid");
@@ -45,16 +47,16 @@ const Login = () => {
 
     return (
         <div className="login-container">
-            <h1 className="title">Hi, Welcome!</h1>
-            <p className="subtitle">Please sign in to continue.</p>
+            <h1 className="title">{t("login.welcome")}</h1>
+            <p className="subtitle">{t("login.subtitle")}</p>
 
             {errorMessage && (
-                <div className="error-message">{errorMessage}</div>
+                <div className="error-message">{t("login.error.invalid")}</div>
             )}
 
             <input
                 type="text"
-                placeholder="Username/Email"
+                placeholder={t("login.placeholder.username")}
                 value={usernameOrEmail}
                 onChange={(e) => setUsernameOrEmail(e.target.value)}
                 onKeyDown={handleKeyDown}
@@ -63,7 +65,7 @@ const Login = () => {
             <div className="password-wrapper">
                 <input
                     type={showPassword ? "text" : "password"}
-                    placeholder="Password"
+                    placeholder={t("login.placeholder.password")}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     onKeyDown={handleKeyDown}
@@ -73,23 +75,25 @@ const Login = () => {
                     onClick={() => setShowPassword((prev) => !prev)}
                     className="toggle-password-btn"
                 >
-                    {showPassword ? "Hide" : "Show"}
+                    {showPassword ? t("login.button.hide") : t("login.button.show")}
                 </button>
             </div>
-
+            <p className="forgot-password" onClick={() => navigate("/forgot-password")}>
+                {t("login.forgot")}
+            </p>
             <button
                 onClick={handleLogin}
                 disabled={!isButtonEnabled || isLoading}
                 className={`login-btn ${isButtonEnabled ? "enabled" : ""}`}
             >
-                {isLoading ? "Logging in..." : "Login"}
+                {isLoading ? t("login.loggingIn") : t("login.login")}
             </button>
 
             <p className="signup-prompt">
-                Don’t have an account?{" "}
+                {t("login.signup.prompt")}{" "}
                 <span onClick={() => navigate("/register")} className="signup-link">
-          Sign up
-        </span>
+                    {t("login.signup.link")}
+                </span>
             </p>
         </div>
     );

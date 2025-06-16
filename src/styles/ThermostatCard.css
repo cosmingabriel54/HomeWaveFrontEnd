@@ -1,0 +1,59 @@
+
+.thermostat-card {
+    background-color: #1e1e1e;
+    color:#fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 220px;
+    max-width: 260px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.thermostat-header {
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.thermostat-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.thermostat-controls button {
+    font-size: 1.25rem;
+    padding: 6px 12px;
+    background-color: #ff6b00;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.thermostat-controls button:hover {
+    background-color: #e65c00;
+}
+
+.thermostat-controls span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.thermostat-sensor {
+    font-size: 0.9rem;
+    color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4px;
+    border-top: 1px solid #444;
+}

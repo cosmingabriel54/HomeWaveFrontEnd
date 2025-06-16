@@ -1,0 +1,66 @@
+.modal {
+    background: #1e1e1e;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 400px;
+    margin: auto;
+    outline: none;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.dropdown-select {
+    width: 100%;
+    padding: 10px;
+    background-color: #2c2c2c;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    margin-top: 1rem;
+}
+
+.dialog-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dialog-actions button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dialog-actions button:first-child {
+    background-color: #444;
+    color: #fff;
+}
+
+.dialog-actions button:last-child {
+    background-color: #ff7b00;
+    color: #000;
+}
+
+.invite-code {
+    background-color: #222;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    color: #ff7b00;
+}
+
+.invite-code pre {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}

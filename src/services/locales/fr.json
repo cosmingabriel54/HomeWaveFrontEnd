@@ -1,0 +1,190 @@
+{
+  "lightGraph": {
+    "title": "Utilisation de la Lumière"
+  },
+  "dimmer": {
+    "lightControl": "Contrôle de la lumière"
+  },
+  "auth": {
+    "forgotPassword": "Mot de passe oublié",
+    "enterEmailInstruction": "Entrez votre e-mail pour recevoir un code de réinitialisation.",
+    "email": "E-mail",
+    "sendCode": "Envoyer le code",
+    "sending": "Envoi...",
+    "emailNotFound": "E-mail introuvable ou échec de l'envoi du code de réinitialisation.",
+    "genericError": "Une erreur s'est produite."
+  },
+  "house": {
+    "manageTitle": "Gérer les maisons",
+    "addHouse": "Ajouter une maison",
+    "addRoom": "Ajouter une pièce",
+    "deleteHouse": "Supprimer la maison",
+    "deleteRoom": "Supprimer la pièce",
+    "addOrJoin": "Ajouter ou rejoindre une maison",
+    "houseName": "Nom de la maison",
+    "selectRoom": "Sélectionner une pièce",
+    "selectRoomPlaceholder": "Sélectionner une pièce",
+    "cancel": "Annuler"
+  },
+  "members": {
+    "title": "Membres",
+    "invite": "Inviter"
+  },
+  "dialog": {
+    "orCode": "Ou entrer le code d'invitation",
+    "codePlaceholder": "Code d'invitation (optionnel)",
+    "cancel": "Annuler",
+    "submit": "Soumettre"
+  },
+  "inviteDialog": {
+    "selectHouse": "Sélectionner une maison",
+    "selectPlaceholder": "Sélectionner une maison",
+    "cancel": "Annuler",
+    "generate": "Générer le code",
+    "codeTitle": "Code d'invitation :",
+    "codeNote": "Ce code est valide pendant 15 minutes. Partagez-le uniquement avec des utilisateurs de confiance."
+  },
+  "powerDialog": {
+    "title": "Mode économie d'énergie",
+    "description": "Le mode économie d'énergie réduit la consommation de batterie en mettant l'appareil en veille entre les vérifications. Cela introduit un délai pouvant aller jusqu'à 10 secondes lors du basculement des lumières, serrures ou thermostat.",
+    "selectDevice": "Sélectionner un appareil",
+    "loading": "Chargement...",
+    "normal": "Mode normal",
+    "power": "Mode économie d'énergie",
+    "close": "Fermer"
+  },
+  "profilePictureDialog": {
+    "title": "Mettre à jour la photo de profil",
+    "noPicture": "Aucune photo téléchargée.",
+    "error": "Seuls les fichiers image sont autorisés.",
+    "cancel": "Annuler"
+  },
+  "resetPassword": {
+    "title": "Réinitialiser le mot de passe",
+    "subtitle": "Entrez votre nouveau mot de passe ci-dessous.",
+    "placeholder": "Nouveau mot de passe",
+    "resetting": "Réinitialisation...",
+    "button": "Réinitialiser le mot de passe",
+    "success": "Mot de passe réinitialisé avec succès.",
+    "error": "Une erreur inattendue s'est produite."
+  },
+  "thermostat": {
+    "loading": "Chargement du thermostat...",
+    "target": "Cible actuelle : {{value}}°C",
+    "roomTemp": "Température de la pièce : {{value}}°C",
+    "humidity": "Humidité : {{value}}%"
+  },
+  "verifyCode": {
+    "title": "Vérifier le code",
+    "subtitle": "Entrez le code à 6 chiffres envoyé à votre e-mail.",
+    "placeholder": "123456",
+    "verifying": "Vérification...",
+    "verify": "Vérifier",
+    "error.invalid": "Code invalide.",
+    "error.failed": "Échec de la vérification."
+  },
+  "weather": {
+    "codes": {
+      "0": "Ciel dégagé",
+      "1": "Principalement dégagé",
+      "2": "Partiellement nuageux",
+      "3": "Couvert",
+      "45": "Brouillard",
+      "48": "Brouillard givrant",
+      "51": "Bruine légère",
+      "53": "Bruine modérée",
+      "55": "Bruine dense",
+      "61": "Pluie faible",
+      "63": "Pluie modérée",
+      "65": "Pluie forte"
+    },
+    "loading": "Chargement...",
+    "error.fetch": "Échec de la récupération de la météo.",
+    "error.permission": "Permission de localisation refusée.",
+    "error.unsupported": "La géolocalisation n'est pas prise en charge par votre navigateur.",
+    "humidity": "Humidité : {{value}}%"
+  },
+  "login": {
+    "welcome": "Bonjour, bienvenue !",
+    "subtitle": "Veuillez vous connecter pour continuer.",
+    "placeholder.username": "Nom d'utilisateur/E-mail",
+    "placeholder.password": "Mot de passe",
+    "button.show": "Afficher",
+    "button.hide": "Masquer",
+    "forgot": "Mot de passe oublié ?",
+    "loggingIn": "Connexion...",
+    "login": "Connexion",
+    "signup.prompt": "Vous n'avez pas de compte ?",
+    "signup.link": "S'inscrire",
+    "error.invalid": "Nom d'utilisateur/e-mail ou mot de passe invalide."
+  },
+  "main": {
+    "smart": {
+      "title": "Configuration d'action intelligente",
+      "description": "Planifiez une action pour un appareil à une heure précise.",
+      "selectRoom": "Sélectionner une pièce",
+      "selectDevice": "Sélectionner un appareil",
+      "selectFunction": "Sélectionner la fonction de l'appareil",
+      "brightness": "Luminosité",
+      "lockAction": "Sélectionner une action de verrouillage",
+      "lock": "Verrouiller",
+      "unlock": "Déverrouiller",
+      "temperature": "Température",
+      "scheduleTime": "Heure de planification",
+      "repeatDaily": "Répéter tous les jours",
+      "submit": "Confirmer",
+      "cancel": "Annuler"
+    },
+    "sidebar": {
+      "devices": "Appareils",
+      "houses": "Maisons",
+      "logout": "Déconnexion"
+    },
+    "dropdown": {
+      "email": "E-mail",
+      "language": "Langue",
+      "light": "Mode clair",
+      "dark": "Mode sombre",
+      "power": "Mode énergie",
+      "2fa": "2FA",
+      "smart": "Actions intelligentes",
+      "invite": "Inviter un utilisateur",
+      "logout": "Déconnexion"
+    },
+    "thermostat": {
+      "title": "Thermostat",
+      "target": "Cible actuelle"
+    },
+    "otherDevices": {
+      "title": "Autres appareils",
+      "noDevicesTitle": "Aucun appareil trouvé",
+      "noDevicesDesc": "Connectez des appareils via l'application mobile HomeWave :"
+    },
+    "settings": {
+      "userInfo": "Informations utilisateur",
+      "username": "Nom d'utilisateur",
+      "email": "E-mail",
+      "logout": "Déconnexion"
+    }
+  },
+  "register": {
+    "title": "Bonjour, bienvenue !",
+    "subtitle": "Veuillez vous inscrire pour continuer.",
+    "username": "Nom d'utilisateur",
+    "email": "E-mail",
+    "phone": "Numéro de téléphone",
+    "password": "Mot de passe",
+    "button": "S'inscrire",
+    "loading": "Inscription...",
+    "loginPrompt": "Vous avez déjà un compte ?",
+    "loginLink": "Connexion",
+    "error": "Échec de l'inscription. Veuillez vérifier vos informations."
+  },
+  "welcome": {
+    "titleLine1": "Bienvenue sur",
+    "titleLine2": "HomeWave",
+    "start": "Commençons",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "register": "Inscrivez-vous maintenant"
+  }
+}

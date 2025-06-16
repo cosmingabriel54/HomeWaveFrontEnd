@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://homewavebackend.onrender.com";
+const BASE_URL = "https://backendapi.ctce.ro/apicosmin";
 
 export const login = async (username: string, password: string): Promise<string | null> => {
     try {
@@ -43,6 +43,27 @@ export const getUserInfo = async (uuid: string): Promise<Record<string, never> |
         }
     } catch (error) {
         console.error("Failed to fetch user info", error);
+    }
+
+    return null;
+};
+export const sendPasswordResetEmail = async (email: string): Promise<string | null> => {
+    try {
+        const response = await axios.post(
+            `${BASE_URL}/passwordResetEmail`,
+            email,
+            {
+                headers: { "Content-Type": "application/json" },
+                transformRequest: [(data) => data],
+            }
+        );
+
+
+        if (response.status === 200) {
+            return response.data.trim();
+        }
+    } catch (error) {
+        console.error("Failed to send reset email", error);
     }
 
     return null;

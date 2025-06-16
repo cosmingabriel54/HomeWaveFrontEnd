@@ -1,0 +1,192 @@
+{
+  "lightGraph": {
+    "title": "Light Usage"
+  },
+  "dimmer": {
+    "lightControl": "Light Control"
+  },
+  "auth": {
+    "forgotPassword": "Forgot Password",
+    "enterEmailInstruction": "Enter your email to receive a reset code.",
+    "email": "Email",
+    "sendCode": "Send Code",
+    "sending": "Sending...",
+    "emailNotFound": "Email not found or failed to send reset code.",
+    "genericError": "Something went wrong."
+  },
+  "house": {
+    "manageTitle": "Manage Houses",
+    "addHouse": "Add House",
+    "addRoom": "Add Room",
+    "deleteHouse": "Delete House",
+    "deleteRoom": "Delete Room",
+    "addOrJoin": "Add or Join House",
+    "houseName": "House Name",
+    "selectRoom": "Select a Room",
+    "selectRoomPlaceholder": "Select room",
+    "cancel": "Cancel"
+  },
+  "members": {
+    "title": "Members",
+    "invite": "Invite"
+  },
+  "dialog": {
+    "orCode": "Or enter invite code",
+    "codePlaceholder": "Invite Code (optional)",
+    "cancel": "Cancel",
+    "submit": "Submit"
+  },
+  "inviteDialog": {
+    "selectHouse": "Select House",
+    "selectPlaceholder": "Select a house",
+    "cancel": "Cancel",
+    "generate": "Generate Code",
+    "codeTitle": "Invite Code:",
+    "codeNote": "This code is valid for 15 minutes. Only share it with trusted users."
+  },
+  "powerDialog": {
+    "title": "Power Saving Mode",
+    "description": "Power saving mode reduces battery drain by putting the device to sleep between checks. This introduces a delay of up to 10 seconds when toggling lights, locks, thermostat.",
+    "selectDevice": "Select a device",
+    "loading": "Loading...",
+    "normal": "Normal Mode",
+    "power": "Power Saving Mode",
+    "close": "Close"
+  },
+  "profilePictureDialog": {
+    "title": "Update Profile Picture",
+    "noPicture": "No picture uploaded.",
+    "error": "Only image files are allowed.",
+    "cancel": "Cancel"
+  },
+  "resetPassword": {
+    "title": "Reset Password",
+    "subtitle": "Enter your new password below.",
+    "placeholder": "New Password",
+    "resetting": "Resetting...",
+    "button": "Reset Password",
+    "success": "Password reset successfully.",
+    "error": "An unexpected error occurred."
+  },
+  "thermostat": {
+    "loading": "Loading thermostat...",
+    "target": "Current Target: {{value}}°C",
+    "roomTemp": "Room Temp: {{value}}°C",
+    "humidity": "Humidity: {{value}}%"
+  },
+  "verifyCode": {
+    "title": "Verify Code",
+    "subtitle": "Enter the 6-digit code sent to your email.",
+    "placeholder": "123456",
+    "verifying": "Verifying...",
+    "verify": "Verify",
+    "error.invalid": "Invalid code.",
+    "error.failed": "Verification failed."
+  },
+  "weather": {
+    "codes": {
+      "0": "Clear sky",
+      "1": "Mainly clear",
+      "2": "Partly cloudy",
+      "3": "Overcast",
+      "45": "Fog",
+      "48": "Depositing rime fog",
+      "51": "Light drizzle",
+      "53": "Moderate drizzle",
+      "55": "Dense drizzle",
+      "61": "Slight rain",
+      "63": "Moderate rain",
+      "65": "Heavy rain"
+    },
+    "loading": "Loading...",
+    "error.fetch": "Failed to fetch weather.",
+    "error.permission": "Location permission denied.",
+    "error.unsupported": "Geolocation is not supported by your browser.",
+    "humidity": "Humidity: {{value}}%"
+  },
+  "login": {
+    "welcome": "Hi, Welcome!",
+    "subtitle": "Please sign in to continue.",
+    "placeholder.username": "Username/Email",
+    "placeholder.password": "Password",
+    "button.show": "Show",
+    "button.hide": "Hide",
+    "forgot": "Forgot password?",
+    "loggingIn": "Logging in...",
+    "login": "Login",
+    "signup.prompt": "Don’t have an account?",
+    "signup.link": "Sign up",
+    "error.invalid": "Invalid username/email or password."
+  },
+  "main": {
+    "smart": {
+      "title": "Smart Action Setup",
+      "description": "Schedule an action for a device at a specific time.",
+      "selectRoom": "Select a room",
+      "selectDevice": "Select a device",
+      "selectFunction": "Select device function",
+      "brightness": "Brightness",
+      "lockAction": "Select lock action",
+      "lock": "Lock",
+      "unlock": "Unlock",
+      "temperature": "Temperature",
+      "scheduleTime": "Schedule time",
+      "repeatDaily": "Repeat every day",
+      "submit": "Confirm",
+      "cancel": "Cancel"
+    },
+    "sidebar": {
+      "devices": "Devices",
+      "houses": "Houses",
+      "logout": "Logout"
+    },
+    "dropdown": {
+      "email": "Email",
+      "language": "Language",
+      "light": "Light Mode",
+      "dark": "Dark Mode",
+      "power": "Power Mode",
+      "2fa": "2FA",
+      "smart": "Smart Actions",
+      "invite": "Invite User",
+      "logout": "Logout"
+    },
+    "thermostat": {
+      "title": "Thermostat",
+      "target": "Current Target"
+    },
+    "otherDevices": {
+      "title": "Other Devices",
+      "noDevicesTitle": "No Devices Found",
+      "noDevicesDesc": "Connect devices using the HomeWave mobile app:"
+    },
+    "settings": {
+      "userInfo": "User Info",
+      "username": "Username",
+      "email": "Email",
+      "logout": "Logout"
+    }
+  },
+  "register": {
+    "title": "Hi, Welcome!",
+    "subtitle": "Please sign up to continue.",
+    "username": "Username",
+    "email": "Email",
+    "phone": "Phone Number",
+    "password": "Password",
+    "button": "Register",
+    "loading": "Registering...",
+    "loginPrompt": "Already have an account?",
+    "loginLink": "Login",
+    "error": "Registration failed. Please check your inputs."
+  },
+  "welcome": {
+    "titleLine1": "Welcome to",
+    "titleLine2": "HomeWave",
+    "start": "Let’s start",
+    "noAccount": "Don't have an account?",
+    "register": "Register now"
+  }
+}
+
+

@@ -1,0 +1,110 @@
+.action-btn {
+    background-color: #FFA500;
+    color: #000;
+    border: none;
+    padding: 6px 12px;
+    margin-left: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #e69500;
+}
+
+.delete-btn {
+    background-color: transparent;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    padding: 4px 10px;
+    margin-left: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #ff4d4d;
+    color: #000;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modal input {
+    background: #2c2c2c;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.confirm-btn {
+    background-color: #ff7b00;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal select {
+    background-color: #2c2c2c;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    appearance: none;
+    outline: none;
+}
+
+.modal select:focus {
+    border-color: #ff7b00;
+    box-shadow: 0 0 0 2px rgba(255, 123, 0, 0.3);
+}
+
+.modal button {
+    background-color: transparent;
+    color: #ff7b00;
+    border: 1px solid #ff7b00;
+    padding: 6px 14px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.modal button:hover {
+    background-color: #ff7b00;
+    color: #000;
+}
+

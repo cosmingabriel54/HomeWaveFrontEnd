@@ -1,0 +1,121 @@
+.dimmer-slider {
+    position: relative;
+    width: 60px;
+    height: 200px;
+    background: #2c2c2c;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dimmer-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ff5722;
+    transition: height 0.2s ease;
+}
+
+.dimmer-content {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.dimmer-value {
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.dimmer-wrapper {
+    width: 120px;
+    padding: 16px;
+    background: #1f1f1f;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.dimmer-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.room-name {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+}
+
+.dimmer-label {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.checkbox-wrapper-41 {
+    --size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+}
+.checkbox-wrapper-41 input[type="checkbox"] {
+    display: block; /* required for visibility */
+    -webkit-appearance: none;
+    appearance: none;
+    width: var(--size);
+    height: calc(var(--size) / 2);
+    background-color: #fff;
+    border: 3px solid #222;
+    border-radius: 30px 100px 100px 100px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: calc(var(--size) / 2);
+    height: calc(var(--size) / 2);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0.7);
+    border: 3px solid #222;
+    border-radius: 30px 100px 100px 100px;
+    background-color: #ff5722;
+    box-sizing: border-box;
+    transition: all 0.5s;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]:checked {
+    background-color: #ff5722;
+    border-radius: 100px 100px 30px 100px;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]:checked::before {
+    left: 50%;
+    background-color: #fff;
+    border-radius: 100px 100px 30px 100px;
+}

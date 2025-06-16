@@ -1,0 +1,190 @@
+{
+  "lightGraph": {
+    "title": "Utilizare Lumină"
+  },
+  "dimmer": {
+    "lightControl": "Control Lumină"
+  },
+  "auth": {
+    "forgotPassword": "Ai uitat parola",
+    "enterEmailInstruction": "Introdu adresa ta de email pentru a primi un cod de resetare.",
+    "email": "Email",
+    "sendCode": "Trimite Codul",
+    "sending": "Se trimite...",
+    "emailNotFound": "Emailul nu a fost găsit sau trimiterea codului a eșuat.",
+    "genericError": "Ceva n-a mers bine."
+  },
+  "house": {
+    "manageTitle": "Gestionează Casele",
+    "addHouse": "Adaugă Casă",
+    "addRoom": "Adaugă Cameră",
+    "deleteHouse": "Șterge Casa",
+    "deleteRoom": "Șterge Camera",
+    "addOrJoin": "Adaugă sau Alătură-te Casei",
+    "houseName": "Nume Casă",
+    "selectRoom": "Selectează o Cameră",
+    "selectRoomPlaceholder": "Selectează cameră",
+    "cancel": "Renunță"
+  },
+  "members": {
+    "title": "Membri",
+    "invite": "Invită"
+  },
+  "dialog": {
+    "orCode": "Sau introdu codul de invitație",
+    "codePlaceholder": "Cod de invitație (opțional)",
+    "cancel": "Renunță",
+    "submit": "Trimite"
+  },
+  "inviteDialog": {
+    "selectHouse": "Selectează Casă",
+    "selectPlaceholder": "Selectează o casă",
+    "cancel": "Renunță",
+    "generate": "Generează Cod",
+    "codeTitle": "Cod de Invitație:",
+    "codeNote": "Acest cod este valabil timp de 15 minute. Împărtășește-l doar cu utilizatori de încredere."
+  },
+  "powerDialog": {
+    "title": "Mod Economisire Energie",
+    "description": "Modul de economisire reduce consumul bateriei punând dispozitivul în repaus între verificări. Acest lucru introduce o întârziere de până la 10 secunde la comutarea luminilor, yalelor sau termostatului.",
+    "selectDevice": "Selectează un dispozitiv",
+    "loading": "Se încarcă...",
+    "normal": "Mod Normal",
+    "power": "Mod Economisire",
+    "close": "Închide"
+  },
+  "profilePictureDialog": {
+    "title": "Actualizează Poza de Profil",
+    "noPicture": "Nicio poză încărcată.",
+    "error": "Doar fișiere imagine sunt permise.",
+    "cancel": "Renunță"
+  },
+  "resetPassword": {
+    "title": "Resetează Parola",
+    "subtitle": "Introdu parola nouă mai jos.",
+    "placeholder": "Parolă Nouă",
+    "resetting": "Se resetează...",
+    "button": "Resetează Parola",
+    "success": "Parola a fost resetată cu succes.",
+    "error": "A apărut o eroare neașteptată."
+  },
+  "thermostat": {
+    "loading": "Se încarcă termostatul...",
+    "target": "Țintă curentă: {{value}}°C",
+    "roomTemp": "Temp. cameră: {{value}}°C",
+    "humidity": "Umiditate: {{value}}%"
+  },
+  "verifyCode": {
+    "title": "Verifică Codul",
+    "subtitle": "Introdu codul din 6 cifre trimis prin email.",
+    "placeholder": "123456",
+    "verifying": "Se verifică...",
+    "verify": "Verifică",
+    "error.invalid": "Cod invalid.",
+    "error.failed": "Verificarea a eșuat."
+  },
+  "weather": {
+    "codes": {
+      "0": "Cer senin",
+      "1": "Mai mult senin",
+      "2": "Parțial noros",
+      "3": "Acoperit",
+      "45": "Ceață",
+      "48": "Ceață cu chiciură",
+      "51": "Burniță ușoară",
+      "53": "Burniță moderată",
+      "55": "Burniță deasă",
+      "61": "Ploaie slabă",
+      "63": "Ploaie moderată",
+      "65": "Ploaie puternică"
+    },
+    "loading": "Se încarcă...",
+    "error.fetch": "Nu s-a putut prelua vremea.",
+    "error.permission": "Permisiunea pentru locație a fost refuzată.",
+    "error.unsupported": "Geolocația nu este suportată de browserul tău.",
+    "humidity": "Umiditate: {{value}}%"
+  },
+  "login": {
+    "welcome": "Salut, Bine ai venit!",
+    "subtitle": "Te rog autentifică-te pentru a continua.",
+    "placeholder.username": "Nume utilizator / Email",
+    "placeholder.password": "Parolă",
+    "button.show": "Afișează",
+    "button.hide": "Ascunde",
+    "forgot": "Ai uitat parola?",
+    "loggingIn": "Autentificare...",
+    "login": "Autentificare",
+    "signup.prompt": "Nu ai un cont?",
+    "signup.link": "Creează unul",
+    "error.invalid": "Utilizator/email sau parolă incorectă."
+  },
+  "main": {
+    "smart": {
+      "title": "Configurare Acțiune Inteligentă",
+      "description": "Programează o acțiune pentru un dispozitiv la un anumit moment.",
+      "selectRoom": "Selectează o cameră",
+      "selectDevice": "Selectează un dispozitiv",
+      "selectFunction": "Selectează funcția dispozitivului",
+      "brightness": "Luminozitate",
+      "lockAction": "Selectează acțiunea pentru încuietoare",
+      "lock": "Încuie",
+      "unlock": "Descuie",
+      "temperature": "Temperatură",
+      "scheduleTime": "Ora programată",
+      "repeatDaily": "Repetă în fiecare zi",
+      "submit": "Confirmă",
+      "cancel": "Anulează"
+    },
+    "sidebar": {
+      "devices": "Dispozitive",
+      "houses": "Case",
+      "logout": "Deconectare"
+    },
+    "dropdown": {
+      "email": "Email",
+      "language": "Limbă",
+      "light": "Mod Luminos",
+      "dark": "Mod Întunecat",
+      "power": "Mod Energie",
+      "2fa": "Autentificare 2FA",
+      "smart": "Acțiuni Inteligente",
+      "invite": "Invită Utilizator",
+      "logout": "Deconectare"
+    },
+    "thermostat": {
+      "title": "Termostat",
+      "target": "Țintă curentă"
+    },
+    "otherDevices": {
+      "title": "Alte Dispozitive",
+      "noDevicesTitle": "Niciun dispozitiv găsit",
+      "noDevicesDesc": "Conectează dispozitive folosind aplicația mobilă HomeWave:"
+    },
+    "settings": {
+      "userInfo": "Informații Utilizator",
+      "username": "Nume utilizator",
+      "email": "Email",
+      "logout": "Deconectare"
+    }
+  },
+  "register": {
+    "title": "Salut, Bine ai venit!",
+    "subtitle": "Te rog creează un cont pentru a continua.",
+    "username": "Nume utilizator",
+    "email": "Email",
+    "phone": "Număr de telefon",
+    "password": "Parolă",
+    "button": "Înregistrare",
+    "loading": "Se înregistrează...",
+    "loginPrompt": "Ai deja un cont?",
+    "loginLink": "Autentificare",
+    "error": "Înregistrarea a eșuat. Verifică datele introduse."
+  },
+  "welcome": {
+    "titleLine1": "Bine ai venit la",
+    "titleLine2": "HomeWave",
+    "start": "Să începem",
+    "noAccount": "Nu ai un cont?",
+    "register": "Înregistrează-te acum"
+  }
+}

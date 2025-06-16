@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../services/authService";
 import "../styles/Login.css";
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -13,6 +14,7 @@ const Register = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isButtonEnabled, setIsButtonEnabled] = useState(false);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const { t } = useTranslation();
 
     useEffect(() => {
         setIsButtonEnabled(
@@ -44,53 +46,54 @@ const Register = () => {
 
     return (
         <div className="login-container">
-            <h1 className="title">Hi, Welcome!</h1>
-            <p className="subtitle">Please sign up to continue.</p>
+            <h1 className="title">{t("register.title")}</h1>
+            <p className="subtitle">{t("register.subtitle")}</p>
 
-            {errorMessage && <div className="error-message">{errorMessage}</div>}
+            {errorMessage && <div className="error-message">{t(errorMessage)}</div>}
+
 
             <input
                 type="text"
-                placeholder="Username"
+                placeholder={t("register.username")}
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
             />
-
             <input
                 type="email"
-                placeholder="Email"
+                placeholder={t("register.email")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
-
             <input
                 type="tel"
-                placeholder="Phone Number"
+                placeholder={t("register.phone")}
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
             />
-
             <input
                 type="password"
-                placeholder="Password"
+                placeholder={t("register.password")}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
+
 
             <button
                 onClick={handleRegister}
                 disabled={!isButtonEnabled || isLoading}
                 className={`login-btn ${isButtonEnabled ? "enabled" : ""}`}
             >
-                {isLoading ? "Registering..." : "Register"}
+                {isLoading ? t("register.loading") : t("register.button")}
             </button>
 
+
             <p className="signup-prompt">
-                Already have an account?{" "}
+                {t("register.loginPrompt")}{" "}
                 <span onClick={() => navigate("/login")} className="signup-link">
-          Login
-        </span>
+                    {t("register.loginLink")}
+                </span>
             </p>
+
         </div>
     );
 };

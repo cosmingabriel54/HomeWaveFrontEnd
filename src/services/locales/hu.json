@@ -1,0 +1,190 @@
+{
+  "lightGraph": {
+    "title": "Fényhasználat"
+  },
+  "dimmer": {
+    "lightControl": "Fényvezérlés"
+  },
+  "auth": {
+    "forgotPassword": "Elfelejtett jelszó",
+    "enterEmailInstruction": "Add meg az email címed, hogy megkapd az új jelszót.",
+    "email": "Email",
+    "sendCode": "Kód küldése",
+    "sending": "Küldés...",
+    "emailNotFound": "Az email cím nem található vagy a kód küldése sikertelen.",
+    "genericError": "Valami hiba történt."
+  },
+  "house": {
+    "manageTitle": "Házak kezelése",
+    "addHouse": "Ház hozzáadása",
+    "addRoom": "Szoba hozzáadása",
+    "deleteHouse": "Ház törlése",
+    "deleteRoom": "Szoba törlése",
+    "addOrJoin": "Ház hozzáadása vagy csatlakozás",
+    "houseName": "Ház neve",
+    "selectRoom": "Válassz szobát",
+    "selectRoomPlaceholder": "Szoba kiválasztása",
+    "cancel": "Mégse"
+  },
+  "members": {
+    "title": "Tagok",
+    "invite": "Meghívás"
+  },
+  "dialog": {
+    "orCode": "Vagy add meg a meghívó kódot",
+    "codePlaceholder": "Meghívó kód (nem kötelező)",
+    "cancel": "Mégse",
+    "submit": "Küldés"
+  },
+  "inviteDialog": {
+    "selectHouse": "Válassz házat",
+    "selectPlaceholder": "Ház kiválasztása",
+    "cancel": "Mégse",
+    "generate": "Kód generálása",
+    "codeTitle": "Meghívó kód:",
+    "codeNote": "Ez a kód 15 percig érvényes. Csak megbízható felhasználókkal oszd meg."
+  },
+  "powerDialog": {
+    "title": "Energiatakarékos mód",
+    "description": "Az energiatakarékos mód csökkenti az akkumulátor fogyasztását azzal, hogy az eszközt alvó állapotba helyezi két ellenőrzés között. Ez akár 10 másodperces késést is okozhat a fények, zárak és termosztát vezérlésében.",
+    "selectDevice": "Válassz egy eszközt",
+    "loading": "Betöltés...",
+    "normal": "Normál mód",
+    "power": "Takarékos mód",
+    "close": "Bezárás"
+  },
+  "profilePictureDialog": {
+    "title": "Profilkép frissítése",
+    "noPicture": "Nincs feltöltött kép.",
+    "error": "Csak képfájlokat lehet feltölteni.",
+    "cancel": "Mégse"
+  },
+  "resetPassword": {
+    "title": "Jelszó visszaállítása",
+    "subtitle": "Add meg az új jelszavad lentebb.",
+    "placeholder": "Új jelszó",
+    "resetting": "Visszaállítás...",
+    "button": "Jelszó visszaállítása",
+    "success": "A jelszót sikeresen visszaállítottuk.",
+    "error": "Váratlan hiba történt."
+  },
+  "thermostat": {
+    "loading": "Termosztát betöltése...",
+    "target": "Célérték: {{value}}°C",
+    "roomTemp": "Szoba hőmérséklet: {{value}}°C",
+    "humidity": "Páratartalom: {{value}}%"
+  },
+  "verifyCode": {
+    "title": "Kód ellenőrzése",
+    "subtitle": "Add meg a 6 jegyű kódot, amit emailben kaptál.",
+    "placeholder": "123456",
+    "verifying": "Ellenőrzés...",
+    "verify": "Ellenőrzés",
+    "error.invalid": "Érvénytelen kód.",
+    "error.failed": "A kód ellenőrzése sikertelen."
+  },
+  "weather": {
+    "codes": {
+      "0": "Derült égbolt",
+      "1": "Többnyire derült",
+      "2": "Részben felhős",
+      "3": "Borult",
+      "45": "Köd",
+      "48": "Zúzmarás köd",
+      "51": "Enyhe szitálás",
+      "53": "Mérsékelt szitálás",
+      "55": "Sűrű szitálás",
+      "61": "Gyenge eső",
+      "63": "Mérsékelt eső",
+      "65": "Heves eső"
+    },
+    "loading": "Betöltés...",
+    "error.fetch": "Nem sikerült lekérni az időjárást.",
+    "error.permission": "Hozzáférés a helyadatokhoz megtagadva.",
+    "error.unsupported": "A böngésző nem támogatja a földrajzi helymeghatározást.",
+    "humidity": "Páratartalom: {{value}}%"
+  },
+  "login": {
+    "welcome": "Üdvözlünk!",
+    "subtitle": "Kérlek jelentkezz be a folytatáshoz.",
+    "placeholder.username": "Felhasználónév / Email",
+    "placeholder.password": "Jelszó",
+    "button.show": "Megjelenítés",
+    "button.hide": "Elrejtés",
+    "forgot": "Elfelejtetted a jelszavad?",
+    "loggingIn": "Bejelentkezés...",
+    "login": "Bejelentkezés",
+    "signup.prompt": "Nincs fiókod?",
+    "signup.link": "Regisztrálj",
+    "error.invalid": "Hibás felhasználónév/email vagy jelszó."
+  },
+  "main": {
+    "smart": {
+      "title": "Intelligens Művelet Beállítása",
+      "description": "Ütemezzen egy műveletet egy eszközre egy adott időpontban.",
+      "selectRoom": "Válasszon szobát",
+      "selectDevice": "Válasszon eszközt",
+      "selectFunction": "Válasszon eszközfunkciót",
+      "brightness": "Fényerő",
+      "lockAction": "Válassza ki a zár műveletét",
+      "lock": "Zárolás",
+      "unlock": "Feloldás",
+      "temperature": "Hőmérséklet",
+      "scheduleTime": "Ütemezett idő",
+      "repeatDaily": "Ismétlés minden nap",
+      "submit": "Megerősít",
+      "cancel": "Mégse"
+    },
+    "sidebar": {
+      "devices": "Eszközök",
+      "houses": "Házak",
+      "logout": "Kijelentkezés"
+    },
+    "dropdown": {
+      "email": "Email",
+      "language": "Nyelv",
+      "light": "Világos mód",
+      "dark": "Sötét mód",
+      "power": "Energia mód",
+      "2fa": "2FA",
+      "smart": "Okos műveletek",
+      "invite": "Felhasználó meghívása",
+      "logout": "Kijelentkezés"
+    },
+    "thermostat": {
+      "title": "Termosztát",
+      "target": "Célérték"
+    },
+    "otherDevices": {
+      "title": "Egyéb eszközök",
+      "noDevicesTitle": "Nincs elérhető eszköz",
+      "noDevicesDesc": "Csatlakoztasd az eszközöket a HomeWave mobilalkalmazással:"
+    },
+    "settings": {
+      "userInfo": "Felhasználói adatok",
+      "username": "Felhasználónév",
+      "email": "Email",
+      "logout": "Kijelentkezés"
+    }
+  },
+  "register": {
+    "title": "Üdvözlünk!",
+    "subtitle": "Kérlek regisztrálj a folytatáshoz.",
+    "username": "Felhasználónév",
+    "email": "Email",
+    "phone": "Telefonszám",
+    "password": "Jelszó",
+    "button": "Regisztráció",
+    "loading": "Regisztráció folyamatban...",
+    "loginPrompt": "Már van fiókod?",
+    "loginLink": "Bejelentkezés",
+    "error": "A regisztráció sikertelen. Kérlek ellenőrizd az adatokat."
+  },
+  "welcome": {
+    "titleLine1": "Üdvözlünk a",
+    "titleLine2": "HomeWave-nél",
+    "start": "Kezdjük",
+    "noAccount": "Nincs fiókod?",
+    "register": "Regisztrálj most"
+  }
+}
