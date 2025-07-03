@@ -136,6 +136,19 @@
     "signup.link": "Creează unul",
     "error.invalid": "Utilizator/email sau parolă incorectă."
   },
+  "twofa": {
+    "verificationTitle": "Cod de verificare",
+    "codeSentTo": "Am trimis un cod către",
+    "codePlaceholder": "Introdu codul 2FA",
+    "verify": "Verifică",
+    "invalidCode": "Cod invalid",
+    "title": "Autentificare cu doi factori",
+    "description": "Asigură-ți contul activând 2FA",
+    "enable": "Activează 2FA",
+    "disable": "Dezactivează 2FA",
+    "close": "Închide",
+    "disable_confirmation": "Sigur vrei să dezactivezi 2FA?"
+  },
   "main": {
     "members": {
       "toggle": "Membri"

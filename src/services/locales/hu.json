@@ -30,7 +30,19 @@
     "unlock": "Feloldás",
     "humidity": "Páratartalom"
   },
-
+  "twofa": {
+    "verificationTitle": "Ellenőrző kód",
+    "codeSentTo": "Küldtünk egy kódot erre:",
+    "codePlaceholder": "Írd be a 2FA kódot",
+    "verify": "Ellenőrzés",
+    "invalidCode": "Érvénytelen kód",
+    "title": "Kétlépcsős azonosítás",
+    "description": "Védd meg a fiókodat a 2FA engedélyezésével",
+    "enable": "2FA engedélyezése",
+    "disable": "2FA letiltása",
+    "close": "Bezárás",
+    "disable_confirmation": "Biztosan le akarod tiltani a 2FA-t?"
+  },
   "house": {
     "manageTitle": "Házak kezelése",
     "addHouse": "Ház hozzáadása",

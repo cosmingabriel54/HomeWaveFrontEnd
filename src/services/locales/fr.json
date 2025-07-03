@@ -21,7 +21,19 @@
     "unlock": "Déverrouiller",
     "humidity": "Humidité"
   },
-
+  "twofa": {
+    "verificationTitle": "Code de vérification",
+    "codeSentTo": "Nous avons envoyé un code à",
+    "codePlaceholder": "Entrez votre code 2FA",
+    "verify": "Vérifier",
+    "invalidCode": "Code invalide",
+    "title": "Authentification à deux facteurs",
+    "description": "Sécurisez votre compte en activant la 2FA",
+    "enable": "Activer la 2FA",
+    "disable": "Désactiver la 2FA",
+    "close": "Fermer",
+    "disable_confirmation": "Êtes-vous sûr de vouloir désactiver la 2FA ?"
+  },
 
   "auth": {
     "forgotPassword": "Mot de passe oublié",

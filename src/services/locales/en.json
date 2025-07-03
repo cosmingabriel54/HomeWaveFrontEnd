@@ -21,7 +21,19 @@
     "unlock": "Unlock",
     "humidity": "Humidity"
   },
-
+  "twofa": {
+    "title": "Two-Factor Authentication",
+    "description": "Secure your account by enabling 2FA",
+    "enable": "Enable 2FA",
+    "disable": "Disable 2FA",
+    "close": "Close",
+    "disable_confirmation": "Are you sure you want to disable 2FA?",
+    "verificationTitle": "Verification Code",
+    "codeSentTo": "We sent a code to",
+    "codePlaceholder": "Enter your 2FA code",
+    "verify": "Verify",
+    "invalidCode": "Invalid code"
+  },
   "auth": {
     "forgotPassword": "Forgot Password",
     "enterEmailInstruction": "Enter your email to receive a reset code.",
