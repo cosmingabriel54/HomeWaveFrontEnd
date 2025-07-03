@@ -46,14 +46,14 @@ const InputDialog: React.FC<InputDialogProps> = ({
         setCode("");
     };
 
-
     return (
         <Modal
             isOpen={isOpen}
             onRequestClose={onCancel}
             ariaHideApp={false}
             className="modal"
-            overlayClassName="overlay"
+            // Use the class that we know has a high z-index
+            overlayClassName="modal-overlay"
         >
             <h2>{t(title)}</h2>
             <label>{t(label)}</label>

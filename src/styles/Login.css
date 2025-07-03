@@ -39,11 +39,6 @@ input {
     cursor: pointer;
 }
 
-.signup-prompt {
-    margin-top: 20px;
-    color: #ccc;
-    text-align: center;
-}
 
 .signup-link {
     color: #ff5722;
@@ -112,6 +107,7 @@ input,
 .title {
     font-size: 24px;
     margin-bottom: 0.5rem;
+    color: white;
 }
 
 .subtitle {
@@ -174,7 +170,7 @@ input:focus {
 .signup-prompt {
     margin-top: 1rem;
     font-size: 14px;
-    color: #bbb;
+    color: white;
 }
 
 .signup-link {

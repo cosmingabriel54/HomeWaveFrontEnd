@@ -1,3 +1,4 @@
+
 .welcome-container {
     display: flex;
     min-height: 100vh;
@@ -17,6 +18,9 @@
     object-fit: cover;
     border-bottom-right-radius: 40px;
 }
+.register-text {
+    color: white;
+}
 
 .welcome-content {
     flex: 2.5;
@@ -33,6 +37,7 @@
     line-height: 1.2;
     margin-bottom: 30px;
     text-align: center;
+    color: white;
 }
 
 

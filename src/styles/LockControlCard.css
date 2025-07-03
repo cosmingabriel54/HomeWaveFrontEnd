@@ -14,12 +14,10 @@
 }
 
 .lock-label {
-    margin-top: 8px;
-    font-size: 14px;
-    opacity: 0.8;
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 12px;
 }
-
-/* Override button styles from uiverse */
 .btn-lock {
     display: inline-block;
     background: #ff5b5b;
@@ -81,7 +79,46 @@ input[type="checkbox"]:checked + .btn-lock .lockb {
     transform: rotate(0);
     transform-origin: 14px 22px;
 }
+lock-card {
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    padding: 16px;
+    width: 120px;
+    text-align: center;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.lock-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.room-name {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+}
+
+.lock-label {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 12px;
+}
 @keyframes bling6132 {
     50% {
         stroke-dasharray: 3;

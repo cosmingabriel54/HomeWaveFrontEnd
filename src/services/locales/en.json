@@ -1,10 +1,27 @@
 {
   "lightGraph": {
-    "title": "Light Usage"
+    "title": "Power Usage Graph",
+    "lastWeek": "Last Week",
+    "fullHistory": "Full History"
   },
   "dimmer": {
-    "lightControl": "Light Control"
+    "lightControl": "Light Control",
+    "lockControl": "Lock Control"
   },
+  "modal": {
+    "title": "Light Control",
+    "graph": "Graph",
+    "delete": "Delete",
+    "confirmDeleteMessage": "Are you sure you want to delete this device?",
+    "lightControl": "Light Control",
+    "lockControl": "Lock Control",
+    "thermostat": "Thermostat",
+    "confirmDeleteTitle": "Delete Device",
+    "lock": "Lock",
+    "unlock": "Unlock",
+    "humidity": "Humidity"
+  },
+
   "auth": {
     "forgotPassword": "Forgot Password",
     "enterEmailInstruction": "Enter your email to receive a reset code.",
@@ -119,6 +136,9 @@
     "error.invalid": "Invalid username/email or password."
   },
   "main": {
+    "members": {
+      "toggle": "Members"
+    },
     "smart": {
       "title": "Smart Action Setup",
       "description": "Schedule an action for a device at a specific time.",

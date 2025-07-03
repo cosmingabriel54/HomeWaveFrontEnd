@@ -1,4 +1,3 @@
-// services/sensorService.ts
 
 export interface SensorData {
     temperatureC: number;
@@ -7,9 +6,10 @@ export interface SensorData {
 }
 
 export const fetchSensorData = async (mac: string): Promise<SensorData | null> => {
+    const normalizedMac = mac.replace(/:/g, '');
     try {
         const response = await fetch(
-            `https://backendapi.ctce.ro/apicosmin/getsensordata?macAddress=${mac}`
+            `https://backendapi.ctce.ro/apicosmin/getsensordata?macAddress=${normalizedMac}`
         );
         if (!response.ok) return null;
 
@@ -27,3 +27,4 @@ export const fetchSensorData = async (mac: string): Promise<SensorData | null> =
         return null;
     }
 };
+

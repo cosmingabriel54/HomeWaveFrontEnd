@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../services/authService";
+import { loginWith2FA} from "../services/authService";
 import "../styles/Login.css";
 import { useTranslation } from "react-i18next";
 
@@ -28,14 +28,13 @@ const Login = () => {
     const handleLogin = async () => {
         setIsLoading(true);
         setErrorMessage(null);
-        const uuid = await login(usernameOrEmail, password);
-        setIsLoading(false);
-
-        if (uuid) {
-            localStorage.setItem("uuid", uuid);
-            navigate("/main");
-        } else {
+        try {
+            await loginWith2FA(usernameOrEmail, password, navigate);
+        } catch (err) {
+            console.log(err)
             setErrorMessage("Invalid username/email or password.");
+        } finally {
+            setIsLoading(false);
         }
     };
 

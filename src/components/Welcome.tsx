@@ -24,7 +24,7 @@ const Welcome = () => {
                 </button>
 
                 <div className="register-prompt">
-                    <span>{t("welcome.noAccount")}</span>
+                    <span className="register-text">{t("welcome.noAccount")}</span>
                     <button className="register-link" onClick={() => navigate("/register")}>
                         {t("welcome.register")}
                     </button>

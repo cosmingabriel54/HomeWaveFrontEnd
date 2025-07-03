@@ -16,6 +16,7 @@ import { useTranslation } from "react-i18next";
 import i18n from "../services/i18n";
 import LightGraph from "../props/LightGraph.tsx";
 import SmartActionDialog from "../props/SmartActionDialog.tsx";
+import TwoFASettingsDialog from "../props/TwoFASettingsDialog.tsx";
 
 interface Device {
     device_id: number;
@@ -56,14 +57,30 @@ const Main = () => {
         profilePicture: null,
         profilePictureMimeType: null
     });
+    const [show2FADialog, setShow2FADialog] = useState(false);
+    const [isPowerSavingMap, setIsPowerSavingMap] = useState<Record<string, boolean>>({});
     const [showLanguageDialog, setShowLanguageDialog] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(i18n.language || "en");
     const baseUrl = "https://backendapi.ctce.ro/apicosmin";
     const [theme, setTheme] = useState(() => {
-        return localStorage.getItem("theme") || "dark";
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            return savedTheme;
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     });
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggleTheme = () => {
+        setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    };
+    useEffect(() => {
 
+        document.documentElement.setAttribute('data-theme', theme);
+        document.body.setAttribute('data-theme', theme);
+
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [isMembersDrawerOpen, setIsMembersDrawerOpen] = useState(false);
     const getInitial = (name: string) => name.charAt(0).toUpperCase();
 
     const userInitial = getInitial(userInfo.username);
@@ -81,20 +98,19 @@ const Main = () => {
     const allDevices = deviceTree.flatMap(h =>
         h.rooms.flatMap(r => r.devices)
     );
-
-    useEffect(() => {
-        document.body.classList.toggle("dark", theme === "dark");
-        localStorage.setItem("theme", theme);
-    }, [theme]);
-
-    const toggleTheme = () => {
-        setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    const fetchPowerSavingMode = async (mac: string) => {
+        try {
+            const res = await axios.get(`${baseUrl}/getpowersavingmode?mac_address=${mac}`);
+            const isOn = parseInt(res.data) === 1;
+            setIsPowerSavingMap(prev => ({ ...prev, [mac]: isOn }));
+        } catch (err) {
+            console.error(`Failed to fetch power mode for ${mac}`, err);
+        }
     };
-
     useEffect(() => {
         if (!uuid) return;
         fetchData();
-        fetchUserInfo(); // Fetch user info when component mounts, only once
+        fetchUserInfo();
     }, [uuid]);
 
     const fetchData = async () => {
@@ -107,6 +123,7 @@ const Main = () => {
                 house.rooms.forEach(room =>
                     room.devices.forEach(device => {
                         fetchLightStatus(device.mac_address);
+                        fetchPowerSavingMode(device.mac_address);
                     })
                 )
             );
@@ -120,7 +137,6 @@ const Main = () => {
             const res = await axios.get(`${baseUrl}/getlightstatus?mac_address=${mac}`);
             const percentage = res.data.light_status ?? 0;
 
-            // Update the status directly in the deviceTree
             setDeviceTree(prevTree =>
                 prevTree.map(house => ({
                     ...house,
@@ -204,9 +220,16 @@ const Main = () => {
             </div>
 
             <div className="topbar">
+                <button
+                    className="toggle-members-btn"
+                    onClick={() => setIsMembersDrawerOpen(prev => !prev)}
+                >
+                    {t("main.members.toggle")}
+                </button>
+
                 <div className="user-profile" onClick={() => setDropdownOpen(!dropdownOpen)}>
                     <div className="avatar-wrapper" onClick={(e) => {
-                        e.stopPropagation(); // don't trigger dropdown
+                        e.stopPropagation();
                         setShowProfileDialog(true);
                     }}>
                         <div className="avatar">
@@ -248,7 +271,7 @@ const Main = () => {
                             </button>
                             <button onClick={() => {
                                 setDropdownOpen(false);
-                                //setShow2FADialog(true);
+                                setShow2FADialog(true);
                             }}>
                                 <ShieldCheck size={16} style={{marginRight: 8}}/> {t("main.dropdown.2fa")}
                             </button>
@@ -273,6 +296,15 @@ const Main = () => {
             <div className="dashboard-content">
                 <div className="left-panel">
                     <WeatherCard/>
+                    {deviceTree
+                        .flatMap(h => h.rooms)
+                        .flatMap(r => r.devices.map(d => ({...d, roomName: r.room_name})))
+                        .filter(d => d.device_type === "light_control")
+                        .map(lightDevice => (
+                            <div key={lightDevice.mac_address} className="graph-panel">
+                                <LightGraph mac={lightDevice.mac_address}/>
+                            </div>
+                        ))}
                 </div>
 
 
@@ -283,7 +315,7 @@ const Main = () => {
                                 <div className="device-control-container">
                                     <h2>{t("main.thermostat.title")}</h2>
                                     <div className="thermostat-section">
-                                        {thermostats.map(device => {
+                                    {thermostats.map(device => {
                                             const room = deviceTree
                                                 .flatMap(h => h.rooms)
                                                 .find(r => r.devices.some(d => d.device_id === device.device_id));
@@ -349,6 +381,7 @@ const Main = () => {
                                                                         mac={device.mac_address}
                                                                         room={room.room_name}
                                                                         initialValue={device.status}
+                                                                        isPowerSaving={isPowerSavingMap[device.mac_address] ?? false}
                                                                         onChangeEnd={async (mac, value) => {
                                                                             try {
                                                                                 await axios.get(`${baseUrl}/turnonlight?mac_address=${mac}&percentage=${value}`);
@@ -357,6 +390,7 @@ const Main = () => {
                                                                             }
                                                                         }}
                                                                     />
+
                                                                 );
                                                             case "lock_control":
                                                                 return (
@@ -420,13 +454,19 @@ const Main = () => {
                 isOpen={isInviteDialogOpen}
                 onClose={() => setIsInviteDialogOpen(false)}
             />
-            {deviceTree.length > 0 && (
-                <HouseMembers
-                    houseId={deviceTree[0].house_id}
-                    baseUrl={baseUrl}
-                    onInviteClick={() => setIsInviteDialogOpen(true)}
-                />
+            {deviceTree.length > 0 && isMembersDrawerOpen && (
+                <div className="members-drawer">
+                    <button className="close-drawer-btn" onClick={() => setIsMembersDrawerOpen(false)}>
+                        <X size={20} />
+                    </button>
+                    <HouseMembers
+                        houseId={deviceTree[0].house_id}
+                        baseUrl={baseUrl}
+                        onInviteClick={() => setIsInviteDialogOpen(true)}
+                    />
+                </div>
             )}
+
             <ProfilePictureDialog
                 isOpen={showProfileDialog}
                 onClose={() => setShowProfileDialog(false)}
@@ -468,18 +508,6 @@ const Main = () => {
                 </div>
             )}
 
-            {(() => {
-                const lightDevice = deviceTree
-                    .flatMap(h => h.rooms)
-                    .flatMap(r => r.devices.map(d => ({ ...d, roomName: r.room_name })))
-                    .find(d => d.device_type === "light_control");
-
-                return lightDevice ? (
-                    <div className="bottom-left-fixed-graph">
-                        <LightGraph key={lightDevice.mac_address} mac={lightDevice.mac_address} />
-                    </div>
-                ) : null;
-            })()}
             <SmartActionDialog
                 isOpen={showSmartDialog}
                 onClose={() => setShowSmartDialog(false)}
@@ -487,6 +515,9 @@ const Main = () => {
                 baseUrl={baseUrl}
                 deviceTree={deviceTree}
             />
+            {show2FADialog && (
+                <TwoFASettingsDialog onClose={() => setShow2FADialog(false)} />
+            )}
         </div>
     );
 

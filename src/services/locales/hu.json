@@ -1,9 +1,12 @@
 {
   "lightGraph": {
-    "title": "Fényhasználat"
+    "title": "Energiafogyasztási Grafikon",
+    "lastWeek": "Múlt Hét",
+    "fullHistory": "Teljes Előzmény"
   },
   "dimmer": {
-    "lightControl": "Fényvezérlés"
+    "lightControl": "Fényvezérlés",
+    "lockControl": "Zárvezérlés"
   },
   "auth": {
     "forgotPassword": "Elfelejtett jelszó",
@@ -14,6 +17,20 @@
     "emailNotFound": "Az email cím nem található vagy a kód küldése sikertelen.",
     "genericError": "Valami hiba történt."
   },
+  "modal": {
+    "title": "Fényvezérlés",
+    "graph": "Grafikon",
+    "delete": "Törlés",
+    "confirmDeleteMessage": "Biztosan törölni szeretné ezt az eszközt?",
+    "lightControl": "Fényvezérlés",
+    "lockControl": "Zárvezérlés",
+    "thermostat": "Termosztát",
+    "confirmDeleteTitle": "Eszköz törlése",
+    "lock": "Zárolás",
+    "unlock": "Feloldás",
+    "humidity": "Páratartalom"
+  },
+
   "house": {
     "manageTitle": "Házak kezelése",
     "addHouse": "Ház hozzáadása",
@@ -119,6 +136,9 @@
     "error.invalid": "Hibás felhasználónév/email vagy jelszó."
   },
   "main": {
+    "members": {
+      "toggle": "Tagok"
+    },
     "smart": {
       "title": "Intelligens Művelet Beállítása",
       "description": "Ütemezzen egy műveletet egy eszközre egy adott időpontban.",

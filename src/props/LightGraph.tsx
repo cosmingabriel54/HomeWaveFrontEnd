@@ -7,10 +7,9 @@ import {
     CartesianGrid,
     Tooltip,
     ResponsiveContainer,
-    Legend,
 } from "recharts";
 import axios from "axios";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 interface LightGraphProps {
     mac: string;
@@ -24,104 +23,160 @@ interface GraphPoint {
     duty?: number;
 }
 
+interface DayEntry {
+    data: string;
+    consum: string | number;
+}
+
+interface WeekEntry {
+    zile?: DayEntry[];
+}
+
+interface ApiResponse {
+    saptamani?: WeekEntry[];
+}
+
 const LightGraph = ({ mac }: LightGraphProps) => {
     const [data, setData] = useState<GraphPoint[]>([]);
-    const [unit, setUnit] = useState<"watts" | "mA" | "voltage" | "duty">("watts");
-    const [label, setLabel] = useState<"s" | "m" | "h">("s");
+    const [unit, setUnit] = useState<"Wh" | "mWh">("mWh");
+    const [isFull, setIsFull] = useState<boolean>(true);
+    const [dates, setDates] = useState<string[]>([]);
     const { t } = useTranslation();
 
     useEffect(() => {
         fetchGraphData();
-    }, [mac]);
+    }, [mac, isFull]);
+
+    useEffect(() => {
+        if (!data.length) return;
+        setData(prev =>
+            prev.map(p => ({
+                ...p,
+                watts: unit === "Wh" ? p.watts / 1000 : p.watts * 1000,
+            }))
+        );
+    }, [unit]);
 
     const fetchGraphData = async () => {
         try {
-            const res = await axios.get(`https://backendapi.ctce.ro/apicosmin/getcycledata?macAddress=${mac.replace(/:/g, "")}`);
-            const raw = res.data;
-            if (!Array.isArray(raw)) return;
+            const res = await axios.get<ApiResponse>(
+                `https://backendapi.ctce.ro/apicosmin/getcycledata?full=${isFull ? 1 : 0}&macAddress=${mac.replace(/:/g, "")}`
+            );
 
-            const MAX_VOLTAGE = 3.3;
-            const RESISTANCE = 47.0;
-            let time = 0;
-            let fullTime = 0;
+            const parsed = res.data;
+            const weeks = parsed.saptamani ?? [];
+            const dailyData: { date: string; consum: number }[] = [];
 
-            const tempPoints: GraphPoint[] = [];
-
-            raw.forEach((entry: any) => {
-                const duty = parseFloat(entry.duty_cycle);
-                const duration = parseFloat(entry.duration_seconds);
-                const voltage = (duty / 100) * MAX_VOLTAGE;
-                const watts = (voltage * voltage) / RESISTANCE;
-                const current = Math.sqrt(watts * 1000 / RESISTANCE);
-
-                const tStart = time;
-                const tEnd = time + duration;
-                fullTime += duration;
-
-                tempPoints.push({ time: tStart, watts, voltage, mA: current, duty });
-                tempPoints.push({ time: tEnd, watts, voltage, mA: current, duty });
-
-                time = tEnd;
+            weeks.forEach((week: WeekEntry) => {
+                const zile = week.zile ?? [];
+                zile.forEach((zi: DayEntry) => {
+                    const dateStr = zi.data;
+                    const raw = parseFloat(typeof zi.consum === "string" ? zi.consum : zi.consum.toString());
+                    const consum = isNaN(raw) || raw < 0 ? 0 : raw;
+                    dailyData.push({ date: dateStr, consum });
+                });
             });
 
-            // Now determine time label based on total full time
-            let timeLabel: "s" | "m" | "h";
-            let scale: number;
+            dailyData.sort((a, b) => a.date.localeCompare(b.date));
+            setDates(dailyData.map(d => d.date.slice(5)));
 
-            if (fullTime > 86400) { // more than 24h
-                timeLabel = "h";
-                scale = 3600;
-            } else if (fullTime > 3600) {
-                timeLabel = "m";
-                scale = 60;
-            } else {
-                timeLabel = "s";
-                scale = 1;
-            }
+            const points: GraphPoint[] = dailyData.map((entry, index) => ({
+                time: index,
+                watts: entry.consum,
+            }));
 
-            setLabel(timeLabel);
-            setData(tempPoints.map(p => ({ ...p, time: p.time / scale })));
-
+            setData(points);
         } catch (e) {
-            console.error("Failed to fetch light graph data", e);
+            console.error("Failed to fetch new graph data", e);
         }
     };
 
-    const unitLabel = unit === "watts" ? "W" : unit === "mA" ? "mA" : unit === "voltage" ? "V" : "%";
+    const unitLabel = unit === "Wh" ? "W" : "mWh";
 
     return (
         <div className="graph-wrapper" style={{ background: "#1f1f1f", padding: 20, borderRadius: 12 }}>
-            <div style={{ marginBottom: 12, display: "flex", justifyContent: "space-between" }}>
-                <h3 style={{color: "white"}}>{t("lightGraph.title")}</h3>
-                <select value={unit} onChange={(e) => setUnit(e.target.value as any)} style={{ padding: 6, borderRadius: 6 }}>
-                    <option value="watts">Watts</option>
-                    <option value="mA">mA</option>
-                    <option value="voltage">Voltage</option>
-                    <option value="duty">Duty</option>
-                </select>
+            <div style={{ marginBottom: 12, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <h3 style={{ color: "white" }}>{t("lightGraph.title")}</h3>
+                <div style={{ display: "flex", gap: 8 }}>
+                    <select
+                        value={unit}
+                        onChange={(e) => setUnit(e.target.value as "Wh" | "mWh")}
+                        style={{
+                            padding: 6,
+                            borderRadius: 6,
+                            backgroundColor: "#ff5722",
+                            color: "white",
+                            border: "none",
+                        }}
+                    >
+                        <option value="Wh">Wh</option>
+                        <option value="mWh">mWh</option>
+                    </select>
+                    <select
+                        value={isFull ? "full" : "week"}
+                        onChange={(e) => setIsFull(e.target.value === "full")}
+                        style={{
+                            padding: 6,
+                            borderRadius: 6,
+                            backgroundColor: "#ff5722",
+                            color: "white",
+                            border: "none",
+                        }}
+                    >
+                        <option value="week">{t("lightGraph.lastWeek")}</option>
+                        <option value="full">{t("lightGraph.fullHistory")}</option>
+                    </select>
+                </div>
             </div>
             <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={data}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#444" />
+                <LineChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: 50 }}>
+
+                <CartesianGrid strokeDasharray="3 3" stroke="#444" />
                     <XAxis
                         type="number"
                         dataKey="time"
                         stroke="#ccc"
-                        tickFormatter={(v) => `${parseFloat(v.toFixed(1))}${label}`}
+                        tickFormatter={(v: number) => {
+                            const idx = Math.floor(v);
+                            return idx >= 0 && idx < dates.length ? dates[idx] : "";
+                        }}
+                        interval={0}
                     />
 
                     <YAxis
                         stroke="#ccc"
                         domain={["auto", "auto"]}
-                        tickFormatter={(v) => `${parseFloat(v.toFixed(2))}${unitLabel}`}
+                        tickMargin={8}
+                        tickFormatter={(v: number) => `${parseFloat(v.toFixed(2))}${unitLabel}`}
                     />
                     <Tooltip
-                        formatter={(value: any) => `${parseFloat(value.toFixed(2))} ${unitLabel}`}
+                        content={({ active, payload }) => {
+                            if (!active || !payload || !payload.length) return null;
+                            const idx = Math.floor(payload[0].payload.time);
+                            return (
+                                <div style={{
+                                    backgroundColor: "#fff",
+                                    padding: 10,
+                                    borderRadius: 6,
+                                    color: "#000",
+                                    fontSize: 14,
+                                    textAlign: "left"
+                                }}>
+                                    <div><strong style={{color: "#000", fontSize: 14}}>T:</strong> {dates[idx] ?? ""}
+                                    </div>
+                                    <div>
+                                        <strong style={{color: "#000", fontSize: 14}}>P:</strong>{" "}
+                                        {(payload[0].value as number).toFixed(unit === "mWh" ? 0 : 2)} {unitLabel}
+                                    </div>
+
+                                </div>
+                            );
+                        }}
                     />
-                    <Legend />
+
                     <Line
-                        type="linear"
-                        dataKey={unit}
+                        type="monotone"
+                        dataKey="watts"
                         stroke="#ff5722"
                         dot={false}
                         strokeWidth={2}

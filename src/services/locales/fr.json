@@ -1,10 +1,28 @@
 {
   "lightGraph": {
-    "title": "Utilisation de la Lumière"
+    "title": "Graphique de Consommation Électrique",
+    "lastWeek": "Semaine Dernière",
+    "fullHistory": "Historique Complet"
   },
   "dimmer": {
-    "lightControl": "Contrôle de la lumière"
+    "lightControl": "Contrôle de la lumière",
+    "lockControl": "Contrôle de Verrouillage"
   },
+  "modal": {
+    "title": "Contrôle de la lumière",
+    "graph": "Graphique",
+    "delete": "Supprimer",
+    "confirmDeleteMessage": "Êtes-vous sûr de vouloir supprimer cet appareil ?",
+    "lightControl": "Contrôle de la lumière",
+    "lockControl": "Contrôle de la serrure",
+    "thermostat": "Thermostat",
+    "confirmDeleteTitle": "Supprimer l'appareil",
+    "lock": "Verrouiller",
+    "unlock": "Déverrouiller",
+    "humidity": "Humidité"
+  },
+
+
   "auth": {
     "forgotPassword": "Mot de passe oublié",
     "enterEmailInstruction": "Entrez votre e-mail pour recevoir un code de réinitialisation.",
@@ -119,6 +137,9 @@
     "error.invalid": "Nom d'utilisateur/e-mail ou mot de passe invalide."
   },
   "main": {
+    "members": {
+      "toggle": "Membres"
+    },
     "smart": {
       "title": "Configuration d'action intelligente",
       "description": "Planifiez une action pour un appareil à une heure précise.",

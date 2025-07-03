@@ -31,9 +31,7 @@ const WeatherCard = () => {
                 const [weatherRes, geoRes] = await Promise.all([
                     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weathercode`),
                     fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`, {
-                        headers: {
-                            "User-Agent": "yourappname/1.0 (your@email.com)",
-                        },
+                        headers: {},
                     }),
                 ]);
 

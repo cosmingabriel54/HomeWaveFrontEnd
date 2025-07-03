@@ -109,8 +109,8 @@ const HouseManager: React.FC<HouseManagerProps> = ({ uuid, baseUrl }) => {
     };
 
     return (
-        <div style={{ padding: "20px", color: "#fff" }}>
-            <h2 style={{color: "#FFA500"}}>{t("house.manageTitle")}</h2>
+        <div className="house-manager-container">
+            <h2>{t("house.manageTitle")}</h2>
             <button className="action-btn" onClick={() => setShowAddHouseDialog(true)}>
                 <Plus size={16} style={{marginRight: 5}}/> {t("house.addHouse")}
             </button>
@@ -119,9 +119,9 @@ const HouseManager: React.FC<HouseManagerProps> = ({ uuid, baseUrl }) => {
                 <p>Loading...</p>
             ) : (
                 houses.map((house) => (
-                    <div key={house.houseId} style={{ marginBottom: 30, borderBottom: "1px solid #333", paddingBottom: 15 }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                            <strong style={{ fontSize: "18px" }}>{house.houseName}</strong>
+                    <div key={house.houseId}  className="house-entry">
+                        <div className="house-header">
+                            <strong>{house.houseName}</strong>
                             <div>
                                 <button className="action-btn"
                                         onClick={() => setShowAddRoomDialog({houseId: house.houseId})}>

@@ -21,7 +21,7 @@ const ThermostatCard = ({ mac, room }: ThermostatCardProps) => {
         };
 
         const loadSensor = async () => {
-            const data = await fetchSensorData(mac);
+            const data = await fetchSensorData(mac.replace(/:/g, ""));
             if (data) setSensorData(data);
         };
 
@@ -46,7 +46,6 @@ const ThermostatCard = ({ mac, room }: ThermostatCardProps) => {
         <div className="thermostat-card">
             <div className="thermostat-header">
                 <strong>{room}</strong>
-                <div>{t("main.thermostat.target")}: {currentTemp}°C</div>
             </div>
             <div className="thermostat-controls">
                 <button onClick={() => adjustTemp(-0.5)}>-</button>

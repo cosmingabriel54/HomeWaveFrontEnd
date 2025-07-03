@@ -37,7 +37,7 @@ const PowerModeDialog = ({ devices, onClose }: PowerModeDialogProps) => {
                     onChange={e => setSelectedMac(e.target.value)}
                 >
                     <option value="" disabled>{t("powerDialog.selectDevice")}</option>
-                    {devices.map(d => (
+                    {[...new Map(devices.map(d => [d.mac_address, d])).values()].map(d => (
                         <option key={d.mac_address} value={d.mac_address}>
                             {d.room_name} ({d.mac_address.slice(-4)})
                         </option>
@@ -65,7 +65,7 @@ const PowerModeDialog = ({ devices, onClose }: PowerModeDialogProps) => {
                                     await axios.post(`${baseUrl}/togglepowersavingmode?mac_address=${selectedMac}&toggle=enable_power_saving`);
                                 }}
                             >
-                                <button>{t("powerDialog.power")}</button>
+                                {t("powerDialog.power")}
                             </button>
                         </div>
 

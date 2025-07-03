@@ -1,10 +1,28 @@
 {
   "lightGraph": {
-    "title": "Utilizare Lumină"
+    "title": "Grafic Consum Energie",
+    "lastWeek": "Ultima Săptămână",
+    "fullHistory": "Istoric Complet"
   },
   "dimmer": {
-    "lightControl": "Control Lumină"
+    "lightControl": "Control Lumină",
+    "lockControl": "Control Încuietoare"
   },
+  "modal": {
+    "title": "Control lumină",
+    "graph": "Grafic",
+    "delete": "Șterge",
+    "confirmDeleteMessage": "Ești sigur că vrei să ștergi acest dispozitiv?",
+    "lightControl": "Control lumină",
+    "lockControl": "Control încuietoare",
+    "thermostat": "Termostat",
+    "confirmDeleteTitle": "Șterge dispozitivul",
+    "lock": "Blochează",
+    "unlock": "Deblochează",
+    "humidity": "Umiditate"
+  },
+
+
   "auth": {
     "forgotPassword": "Ai uitat parola",
     "enterEmailInstruction": "Introdu adresa ta de email pentru a primi un cod de resetare.",
@@ -119,6 +137,9 @@
     "error.invalid": "Utilizator/email sau parolă incorectă."
   },
   "main": {
+    "members": {
+      "toggle": "Membri"
+    },
     "smart": {
       "title": "Configurare Acțiune Inteligentă",
       "description": "Programează o acțiune pentru un dispozitiv la un anumit moment.",
